@@ -85,7 +85,7 @@ SRC 		+= Application/MifareUltralight.c Application/MifareClassic.c Application/
 SRC 		+= Application/NTAG21x.c 
 SRC 		+= $(LUFA_SRC_USB) $(LUFA_SRC_USBCLASS)
 LUFA_PATH	 = ./LUFA
-CC_FLAGS	 = -Werror -DUSE_LUFA_CONFIG_HEADER -DBUILD_DATE=$(BUILD_DATE) -DCOMMIT_ID=\"$(COMMIT_ID)\" $(SETTINGS)
+CC_FLAGS	 = -Werror -fcommon --param=min-pagesize=0 -DUSE_LUFA_CONFIG_HEADER -DBUILD_DATE=$(BUILD_DATE) -DCOMMIT_ID=\"$(COMMIT_ID)\" $(SETTINGS)
 
 ifeq ($(UNLOCKED_F),True)
 #AVRDUDE settings
